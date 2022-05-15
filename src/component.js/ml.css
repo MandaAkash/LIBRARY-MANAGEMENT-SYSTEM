@@ -1,0 +1,28 @@
+.bgimg{
+    background: url("D:/React apps/firstapp/src/images/ml3.jpg");
+    opacity: 2.8;
+    background-size: cover;
+    height: auto;
+}
+.about
+{
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.head{
+    text-decoration: solid;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 150px;
+    color: blue;
+}
+.course{
+    text-align: center;
+    color: blueviolet;
+    padding-top: 100px;
+}
+.home{
+    text-align: center;
+}
