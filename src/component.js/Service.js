@@ -22,14 +22,8 @@ function Service() {
   <Card.Body>
     <Card.Title><h2>Machine Learning</h2></Card.Title>
     <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+      Very intresting book about machine learning.To read this book Click Here!
     </Card.Text>
-    <ul className="list-group-flush">
-    <li>Connect your favourite data source</li>
-    <li>Run anything from simple SQL to a machine learning model</li>
-    <li>Connect the output to favourite app</li>
-    </ul>
     <a href="/register" className="btn btn-primary active" aria-current="page">Click here</a>
   </Card.Body>
     
@@ -40,13 +34,7 @@ function Service() {
   <Card.Img variant="top" src={arti} className='img2'/>
   <Card.Body>
     <Card.Title><h2>Web Development</h2></Card.Title>
-    <Card.Text>The first thing you have to learn, is HTML and CSS,for creating web pages and to set the layout of your web page with beautiful colors, fonts, and much more.
-    </Card.Text>
-    <ul className="list-group-flush">
-    <li>Learn front-end and back-end</li>
-    <li>Build and style interactive sites</li>
-    <li>Communicate with web developers</li>
-    </ul>
+    <Card.Text>Very intresting book about Web Development.To read this book Click Here!</Card.Text>
     <a href="/register" className="btn btn-primary active" aria-current="page">Click here</a>
   </Card.Body>
   </Card>
@@ -57,14 +45,9 @@ function Service() {
   <Card.Body>
     <Card.Title><h2>Data Science</h2></Card.Title>
     <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+    Very intresting book about Data Science.To read this book Click Here!
     </Card.Text>
-    <ul className="list-group-flush">
-    <li>84 Hours of Intensive Classroom and Online Sessions</li>
-    <li>50+ Hours of Practical Assignments</li>
-    <li>2 Capstone Live Projects</li>
-    </ul>
+    
     <a href="/register" className="btn btn-primary active" aria-current="page">Click here</a>
   </Card.Body>
     

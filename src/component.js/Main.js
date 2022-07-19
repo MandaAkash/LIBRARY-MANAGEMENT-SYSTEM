@@ -51,10 +51,10 @@ export default function Main() {
       alt="First slide"
     />
     <Carousel.Caption>
-      <h1 className='akash'>COURSE FINDER</h1>
-      <h2 className='vinay'>Course finder helps you to improve your skills in a good way.Start your career rightly by learning with us.</h2>
-      <h3 className='rohith' class="mt-2" style={{color:"red"}}>Find numerous courses on our course finder and boost up your skills to start a bright career</h3>
-      <h3 className='shoaib' class="mt-3" style={{color:"red"}}>So,what are you waiting for,to know more about our course click here</h3>
+      <h1 class="mt-3" style={{color:"ActiveBorder"}}>LIBRARY MANAGER</h1>
+      <h2 class="mt-3" style={{color:"red"}}>Library Manager helps you to choose the book whatever you need.</h2>
+      <h3  class="mt-2" style={{color:"red"}}>Find numerous books on our Library Manager to improve your knowledge</h3>
+      <h3  class="mt-3" style={{color:"red"}}>So,what are you waiting for,to know more about us click here</h3>
       <a href="/contact" className="btn btn-primary active" aria-current="page">Click here</a>
     </Carousel.Caption>
   </Carousel.Item>

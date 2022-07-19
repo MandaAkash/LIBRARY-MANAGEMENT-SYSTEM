@@ -1,63 +1,117 @@
-import React, { useState } from "react";
-import { Alert } from "react-bootstrap";
-import Home from "./Home";
-import './login.css'
-function Login() {
-  const [emaillog, setEmaillog] = useState(" ");
-  const [passwordlog, setPasswordlog] = useState(" ");
-  const [flag, setFlag] = useState(false);
-  const [home, setHome] = useState(true);
-  function handleLogin(e) {
-    e.preventDefault();
-    let pass = localStorage
-      .getItem("sanskarPassword")
-      .replace(/"/g, "");
-    let mail = localStorage.getItem("sanskarEmail").replace(/"/g, "");
-    if (!emaillog || !passwordlog) {
-      setFlag(true);
-      console.log("EMPTY");
-    } else if (passwordlog !== pass || emaillog !== mail) {
-      setFlag(true);
-    } else {
-      setHome(!home);
-      setFlag(false);
-    }
-  }
-  return (
-    <div>
-      {home ? (
-        <form onSubmit={handleLogin}>
-          <h1 className="login">LogIn</h1>
-          <div className="form-group">
-            <label>Email</label>
-            <input
-              type="email"
-              className="form-control"
-              placeholder="Enter email"
-              onChange={(event) => setEmaillog(event.target.value)}
-            />
-          </div>
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { Form, Button } from "react-bootstrap";
+import loginImg from "../images/login.svg";
+import { useSelector, useDispatch } from "react-redux";
+import { userLogin } from "../slices/userSlice";
 
-          <div className="form-group">
-            <label>Password</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Enter password"
-              onChange={(event) => setPasswordlog(event.target.value)}
-            />
-          </div>
-          <h1 className="loginpage"><button type="submit" className="btn btn-dark btn-lg btn-block">Login</button></h1>
-          <p className="register">Not yet registered ?<a href="/registration">Signup</a></p>
-          {flag && (
-            <Alert color="primary" variant="warning">
-              Fill correct Info else keep trying.
-            </Alert>
-          )}
-        </form>
-      ) : (
-        <Home />
-      )}
+import { useNavigate } from "react-router-dom";
+
+function Login() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  //get user state from redux
+  let { userObj, isError, isLoading, isSuccess, errMsg } = useSelector(
+    (state) => state.user
+  );
+
+  //get dispathc function to call action creator functions
+  let dispatch = useDispatch();
+
+  //get navigate functon to navigate programatically
+  let navigate = useNavigate();
+
+  //when login form is submitted
+  const onFormSubmit = (userCredentialsObject) => {
+     // console.log(userCredentialsObject)
+    if (userCredentialsObject.userType === "user") {
+      dispatch(userLogin(userCredentialsObject));
+    }
+
+    if (userCredentialsObject.userType === "admin") {
+      alert("Admin devoloplment in progress...");
+      // dispatch(userLogin(userCredentialsObject));
+    }
+  };
+
+  //this to be executed when either isSuccess or isError changed
+  useEffect(() => {
+    if (isSuccess) {
+      navigate("/userdashboard");
+    }
+  }, [isSuccess, isError]);
+
+  return (
+    <div className="container">
+      <p className="display-2 text-center text-primary">Login</p>
+
+      <img
+        src={loginImg}
+        width="300px"
+        className="d-sm-block d-none mx-auto"
+        alt=""
+      />
+      <div className="row  ">
+        <div className="col-12 col-sm-8 col-md-6  mx-auto">
+          <Form onSubmit={handleSubmit(onFormSubmit)}>
+            <Form.Group className="mb-3">
+              <Form.Label>Select type of User</Form.Label> <br />
+              {/* user type */}
+              <Form.Check inline type="radio" id="user">
+                <Form.Check.Input
+                  type="radio"
+                  value="user"
+                  {...register("userType", { required: true })}
+                />
+                <Form.Check.Label>User</Form.Check.Label>
+              </Form.Check>
+              <Form.Check inline type="radio" id="admin">
+                <Form.Check.Input
+                  type="radio"
+                  value="admin"
+                  {...register("userType", { required: true })}
+                />
+                <Form.Check.Label>Admin</Form.Check.Label>
+              </Form.Check>
+            </Form.Group>
+            {/* username */}
+            <Form.Group className="mb-3">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter Username"
+                {...register("username", { required: true })}
+              />
+              {/* validation error message for username */}
+              {errors.username && (
+                <p className="text-danger">* Username is required</p>
+              )}
+            </Form.Group>
+
+            {/* password */}
+            <Form.Group className="mb-3">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Enter Password"
+                {...register("password", { required: true })}
+              />
+              {/* validation error message for password */}
+              {errors.password && (
+                <p className="text-danger">* Password is required</p>
+              )}
+            </Form.Group>
+
+            <Button variant="secondary" type="submit">
+              Login
+            </Button>
+          </Form>
+        </div>
+      </div>
     </div>
   );
 }

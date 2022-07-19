@@ -1,117 +1,80 @@
-import React, { useState } from "react";
-import { Form, Alert } from "react-bootstrap";
-import Login from "./Login";
-import './register.css'
-function Registration() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState("");
-  const [profession, setProfession] = useState("");
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { Form, Button, Container } from "react-bootstrap";
+import { MdLogin } from "react-icons/md";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-  const [flag, setFlag] = useState(false);
-  const [login, setLogin] = useState(true);
-  
+function Register() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-
-  function handleFormSubmit(e) {
-    e.preventDefault();
-
-    if (!name || !email || !password || !phone || !profession) {
-      setFlag(true);
-    } else {
-      setFlag(false);
-      localStorage.setItem("sanskarEmail", JSON.stringify(email));
-      localStorage.setItem(
-        "sanskarPassword",
-        JSON.stringify(password)
-      );
-      console.log("Saved in Local Storage");
-
-      setLogin(!login);
-    }
-  }
-
-  function handleClick() {
-    setLogin(!login);
-  }
   return (
-    <>
-        <div>
-          {" "}
-          {login ? (
-            <form onSubmit={handleFormSubmit}>
-              <h1 className="register">Register</h1>
-              <div className="form-group">
-                <label>Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter Full Name"
-                  name="name"
-                  onChange={(event) => setName(event.target.value)}
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Email</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="Enter email"
-                  onChange={(event) => setEmail(event.target.value)}
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Enter password"
-                  onChange={(event) => setPassword(event.target.value)}
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Phone No.</label>
-                <input
-                  type="Phone"
-                  className="form-control"
-                  placeholder="Enter contact no"
-                  onChange={(event) => setPhone(event.target.value)}
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Choose your Profession</label>
-                <Form.Control
-                  as="select"
-                  onChange={(event) => setProfession(event.target.value)}
-                >
-                  <option>Select</option>
-                  <option>Artist</option>
-                  <option>Photographer</option>
-                  <option>Team Player</option>
-                  <option>Full Stack</option>
-                </Form.Control>
-              </div>
-
-              <h1 className="register"><button type="submit" className="btn btn-dark btn-lg btn-block">Register </button></h1>
-              <p onClick={handleClick} className="register">Already registered <a href="/login">log in?</a></p>
-              {flag && (
-                <Alert color="primary" variant="danger">
-                  I got it you are in hurry! But every Field is important!
-                </Alert>
+    <Container>
+      <div className="display-2 text-center text-info">Signup</div>
+      <Form className="w-50 mx-auto">
+        {/* username */}
+        <Form.Group className="mb-3">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter Username"
+                {...register("username", { required: true })}
+              />
+              {/* validation error message for username */}
+              {errors.username && (
+                <p className="text-danger">* Username is required</p>
               )}
-            </form>
-          ) : (
-            <Login />
-          )}
-        </div>
-    
-    </>
+            </Form.Group>
+
+            {/* password */}
+            <Form.Group className="mb-3">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Enter Password"
+                {...register("password", { required: true })}
+              />
+              {/* validation error message for password */}
+              {errors.password && (
+                <p className="text-danger">* Password is required</p>
+              )}
+            </Form.Group>
+
+            {/* email */}
+            <Form.Group className="mb-3">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter email"
+                {...register("email", { required: true })}
+              />
+              {/* validation error message for password */}
+              {errors.email && (
+                <p className="text-danger">* Email is required</p>
+              )}
+            </Form.Group>
+
+            {/* city */}
+            <Form.Group className="mb-3">
+              <Form.Label>City</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter city"
+                {...register("city", { required: true })}
+              />
+              {/* validation error message for password */}
+              {errors.city && <p className="text-danger">* City is required</p>}
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Signup <MdLogin />
+            </Button>
+      </Form>
+    </Container>
   );
 }
 
-export default Registration;
+export default Register;
