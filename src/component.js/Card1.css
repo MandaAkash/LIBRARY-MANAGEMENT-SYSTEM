@@ -1,0 +1,35 @@
+.card-container{
+    width:700px;
+    overflow:hidden;
+    box-shadow: 0px 0px 15px -5px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    /* margin: auto; */
+    margin-left: 450px;
+    margin-top: 50px;
+    border-radius: 25px;
+    background-color: cadetblue;
+
+}
+.card-container:hover{
+
+  transform:scale(1.1);
+  box-shadow: 0px 0px 15px 0px;
+}
+.card-content{
+    margin: 1rem;
+    margin-top: 0.5rem;
+
+}
+h3,p{
+    margin:0;
+    padding:0;
+
+}
+.card-title{
+    margin-bottom:0.5rem;
+}
+.card{
+    background-color: slategray;
+}

@@ -23,8 +23,10 @@ import 'slick-carousel/slick/slick-theme.css'
 import "./slid.css"
 import { data } from './data'
 import { ArrowBackIos, ArrowForwardIos } from '@material-ui/icons'
-
-
+import "./Main.css"
+import FS from './FS'
+import Footer from './Footer'
+import Card from './Card'
 const PreviousButn=(props)=>{
   console.log(props)
   return(
@@ -43,243 +45,72 @@ const NextButn=(props)=>{
 export default function Main() {
   return (
     <div>
-   <Carousel>
-   <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src={img3}
-      alt="First slide"
-    />
-    <Carousel.Caption>
-      <h1 class="mt-3" style={{color:"ActiveBorder"}}>LIBRARY MANAGER</h1>
-      <h2 class="mt-3" style={{color:"red"}}>Library Manager helps you to choose the book whatever you need.</h2>
-      <h3  class="mt-2" style={{color:"red"}}>Find numerous books on our Library Manager to improve your knowledge</h3>
-      <h3  class="mt-3" style={{color:"red"}}>So,what are you waiting for,to know more about us click here</h3>
-      <a href="/contact" className="btn btn-primary active" aria-current="page">Click here</a>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100 "
-      src={img1}
-      alt="Third slide"
-    />
-    <Carousel.Caption>
-      <h3>We have a dedicated team to work for you</h3>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src={img5}
-      alt="Second slide"
-    />
-<Carousel.Caption>
-      <h3>Join our course finder and excel your skills.</h3>
-    </Carousel.Caption>
-  </Carousel.Item>
-  
-</Carousel> 
+      <FS></FS>
+    <div className='Total'>
+      <div classname="utube">
+        <img src='https://www.dealsshutter.com/blog/wp-content/uploads/2020/03/Home-Services-Image-30-march-2020.png' style={{"width":"100%","height":"50%"}}/>
+      </div>
 
-<h1 style={{color:"red",textAlign:"center"}}>TOP RECOMMENDED COURSES FOR YOU</h1>
-
-<div className="container">
+    <div className="container">
         <div className="row my-5">
-            <div className="col-md-4 col-10 mx-auto col-xxl-4 ">
-                <div className="card shadow-lg p-3 mb-5 bg-body rounded" style={{width:"22rem"}}>
-                    <img src={ml} className="card-img-top" alt="..." />
-                    <div className="card-body">
-                      <h4 className="card-title">MACHINE LEARNING</h4>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <p>Learn this top course from our top mentors to know more click here</p>
-                      <a href="/Ml" className="btn btn-primary active" aria-current="page">Click here</a>
-                    </div>
-                  </div>
-            </div>
-            <div className="col-md-4 col-10 mx-auto col-xxl-4 ">
-                <div className="card shadow-lg p-3 mb-5 bg-body rounded" style={{width:"22rem"}}>
-                    <img src={arti} className="card-img-top" alt="..." />
-                    <div className="card-body">
-                      <h5 className="card-title">Artificial Intelligence</h5>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <p className="card-text">Learn this course and excel your skills,to know more click here</p>
-                      <a href="/Ml" className="btn btn-primary active" aria-current="page">Click here</a>
-                    </div>
-                  </div>
-            </div>
-            <div className="col-md-4 col-10 mx-auto col-xxl-4 ">
-                <div className="card shadow-lg p-3 mb-1 bg-body rounded" style={{width:"22rem"}} >
-                    <img src={ds} className="card-img-top" alt="..."/>
-                    <div className="card-body">
-                      <h5 className="card-title">Data Science</h5>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <p className="card-text">Learn about the data that is present every where in the worlsd.To know more click here</p>
-                      <a href="/Ml" className="btn btn-primary active" aria-current="page">Click here</a>
-                    </div>
-                  </div>
-            </div>
+            <Card image={"https://img.freepik.com/free-vector/city-destroy-war-zone-abandoned-buildings-bridge-with-smoke-cataclysm-destruction-natural-disaster-post-apocalyptic-world-ruins-with-broken-road-street-cartoon-illustration_107791-3826.jpg?size=626&ext=jpg&ga=GA1.2.708867965.1657127663"}
+            head={"Earth Quake"}
+            para={"To know more  click here"}/>
+            <Card image={"https://t4.ftcdn.net/jpg/03/99/50/79/240_F_399507907_ihIVdrantaY6B6lJ6j0xV5c85eel9Rli.jpg"}
+               head={"Sink holes"}
+               para={"To know more  click here"}/> 
+                <Card image={"https://media.istockphoto.com/photos/israel-impressions-timna-sandstorm-picture-id898310020?k=20&m=898310020&s=612x612&w=0&h=e-S6nSu66LZicRSM92ZASrpQbxdiHWaKrZy8icwb9v0="}
+               head={"Sand Storm"}
+               para={"To know more  click here"}/> 
         </div>
     </div>
     <div className="container">
         <div className="row my-5">
-            <div className="col-md-4 col-10 mx-auto col-xxl-4 ">
-                <div className="card shadow-lg p-3 mb-5 bg-body rounded" style={{width:"22rem"}}>
-                    <img src={ml} className="card-img-top" alt="..." />
-                    <div className="card-body">
-                      <h4 className="card-title">MACHINE LEARNING</h4>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <p>Learn this top course from our top mentors to know more click here</p>
-                      <a href="/Ml" className="btn btn-primary active" aria-current="page">Click here</a>
-                    </div>
-                  </div>
-            </div>
-            <div className="col-md-4 col-10 mx-auto col-xxl-4 ">
-                <div className="card shadow-lg p-3 mb-5 bg-body rounded" style={{width:"22rem"}}>
-                    <img src={arti} className="card-img-top" alt="..." />
-                    <div className="card-body">
-                      <h5 className="card-title">Artificial Intelligence</h5>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <p className="card-text">Learn this course and excel your skills,to know more click here</p>
-                      <a href="/Ml" className="btn btn-primary active" aria-current="page">Click here</a>
-                    </div>
-                  </div>
-            </div>
-            <div className="col-md-4 col-10 mx-auto col-xxl-4 ">
-                <div className="card shadow-lg p-3 mb-1 bg-body rounded" style={{width:"22rem"}} >
-                    <img src={ds} className="card-img-top" alt="..."/>
-                    <div className="card-body">
-                      <h5 className="card-title">Data Science</h5>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <p className="card-text">Learn about the data that is present every where in the worlsd.To know more click here</p>
-                      <a href="/Ml" className="btn btn-primary active" aria-current="page">Click here</a>
-                    </div>
-                  </div>
-            </div>
-        </div>
-    </div>
+          <Card image={"https://t4.ftcdn.net/jpg/01/45/02/67/240_F_145026793_SqNcilXyQ1L7S0Fzsab2IKviVAIRhQ40.jpg"}
+          head={"Volcano"}
+          para={"To know more  click here"}/>
+           <Card image={"https://t3.ftcdn.net/jpg/02/95/32/60/240_F_295326025_iGaR2nAK825YByWDhKeWHj2RCEr4TAD1.jpg"}
+           head={"Drought"}
+               para={"To know more click here"}/> 
+          <Card image={"https://t4.ftcdn.net/jpg/03/45/39/61/240_F_345396184_SY3kTA5VxjZeIJXrBObFfurRiaRJiT90.jpg"}
+          head={"Tsunami"}
+          para={"To know more  here"}/>
+          </div>
+     </div>
     <div className="container">
         <div className="row my-5">
-            <div className="col-md-4 col-10 mx-auto col-xxl-4 ">
-                <div className="card shadow-lg p-3 mb-5 bg-body rounded" style={{width:"22rem"}}>
-                    <img src={ml} className="card-img-top" alt="..." />
-                    <div className="card-body">
-                      <h4 className="card-title">MACHINE LEARNING</h4>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <p>Learn this top course from our top mentors to know more click here</p>
-                      <a href="/Ml" className="btn btn-primary active" aria-current="page">Click here</a>
-                    </div>
-                  </div>
-            </div>
-            <div className="col-md-4 col-10 mx-auto col-xxl-4 ">
-                <div className="card shadow-lg p-3 mb-5 bg-body rounded" style={{width:"22rem"}}>
-                    <img src={arti} className="card-img-top" alt="..." />
-                    <div className="card-body">
-                      <h5 className="card-title">Artificial Intelligence</h5>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <p className="card-text">Learn this course and excel your skills,to know more click here</p>
-                      <a href="/Ml" className="btn btn-primary active" aria-current="page">Click here</a>
-                    </div>
-                  </div>
-            </div>
-            <div className="col-md-4 col-10 mx-auto col-xxl-4 ">
-                <div className="card shadow-lg p-3 mb-1 bg-body rounded" style={{width:"22rem"}} >
-                    <img src={ds} className="card-img-top" alt="..."/>
-                    <div className="card-body">
-                      <h5 className="card-title">Data Science</h5>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <p className="card-text">Learn about the data that is present every where in the worlsd.To know more click here</p>
-                      <a href="/Ml" className="btn btn-primary active" aria-current="page">Click here</a>
-                    </div>
-                  </div>
-            </div>
-        </div>
-    </div>
+          <Card image={"https://t3.ftcdn.net/jpg/03/69/46/52/240_F_369465299_mlh45khJQhK1ibX9EgUEuoA53zS0ASPn.jpg"}
+          head={"Firestorms"}
+          para={"To know more click here"}/>
+          <Card image={"https://t4.ftcdn.net/jpg/03/45/39/61/240_F_345396184_SY3kTA5VxjZeIJXrBObFfurRiaRJiT90.jpg"}
+          head={"Floods"}
+          para={"To know more  click here"}/>
+         <Card image={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrx9wRRszyoJUJrj-AS7psNhbpgM3KQlzUKw&usqp=CAU"}
+         head={"heatwaves"}
+         para={"To know more click here"}/>
+         </div>
     <div className="container">
         <div className="row my-5">
-            <div className="col-md-4 col-10 mx-auto col-xxl-4 ">
-                <div className="card shadow-lg p-3 mb-5 bg-body rounded" style={{width:"22rem"}}>
-                    <img src={ml} className="card-img-top" alt="..." />
-                    <div className="card-body">
-                      <h4 className="card-title">MACHINE LEARNING</h4>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <p>Learn this top course from our top mentors to know more click here</p>
-                      <a href="/Ml" className="btn btn-primary active" aria-current="page">Click here</a>
-                    </div>
-                  </div>
-            </div>
-            <div className="col-md-4 col-10 mx-auto col-xxl-4 ">
-                <div className="card shadow-lg p-3 mb-5 bg-body rounded" style={{width:"22rem"}}>
-                    <img src={arti} className="card-img-top" alt="..." />
-                    <div className="card-body">
-                      <h5 className="card-title">Artificial Intelligence</h5>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <p className="card-text">Learn this course and excel your skills,to know more click here</p>
-                      <a href="/Ml" className="btn btn-primary active" aria-current="page">Click here</a>
-                    </div>
-                  </div>
-            </div>
+          <Card image={"https://t4.ftcdn.net/jpg/03/45/39/61/240_F_345396184_SY3kTA5VxjZeIJXrBObFfurRiaRJiT90.jpg"}
+          head={"valanches&Landslides"}
+          para={"To know more  click here"}/>
+          <Card image={"https://t4.ftcdn.net/jpg/03/45/39/61/240_F_345396184_SY3kTA5VxjZeIJXrBObFfurRiaRJiT90.jpg"}
+          head={"liminic eruptions"}
+          para={"To know more  click here"}/>
+      
             <div className="col-md-4 col-10 mx-auto col-xxl-4 ">
                 <div className="card shadow-lg p-3 mb-1 bg-body rounded" style={{width:"22rem"}} >
-                    <img src={ds} className="card-img-top" alt="..."/>
+                    <img src={"https://t4.ftcdn.net/jpg/03/45/39/61/240_F_345396184_SY3kTA5VxjZeIJXrBObFfurRiaRJiT90.jpg"} style={{width:"300px",height:"200px"}} className="card-img-top" alt="..."/>
                     <div className="card-body">
-                      <h5 className="card-title">Data Science</h5>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <i class="bi bi-star-fill" style={{color:"gold"}}></i>
-                      <p className="card-text">Learn about the data that is present every where in the worlsd.To know more click here</p>
-                      <a href="/Ml" className="btn btn-primary active" aria-current="page">Click here</a>
+                      <h5 className="card-title">liminic eruptions</h5>
+                      <p className="card-text">To know more  click here</p>
+                      <a href="#" className="btn btn-primary active" aria-current="page">Click here</a>
                     </div>
                   </div>
             </div>
         </div>
     </div>
-    <h1 className='text-center'>OUR TOP 3 COURSES</h1>
+    <h1 className='text-center'>  ABOUT WATER HAZARDS</h1>
     <div className="card-group">
         <div className="container">
       
@@ -290,9 +121,9 @@ export default function Main() {
             <div className="col">
 
          <div className="card  mt-5 h-35 mb-5">
-            <img src={arti} alt="" style={{height:"150px"}}className="w-150 rounded" />
-            <h2 className="card-title">Artificial Intelligence</h2>
-            <button className="btn btn-primary class-body w-75 ms-5" data-bs-toggle="modal" data-bs-target="#m">Specifications</button>
+            <img src={"https://t4.ftcdn.net/jpg/03/45/39/61/240_F_345396184_SY3kTA5VxjZeIJXrBObFfurRiaRJiT90.jpg"} style={{width:"300px",height:"200px"}} alt="" className="w-150 rounded" />
+            <h2 className="card-title">Tsunami</h2>
+            <button className="btn btn-primary class-body w-75 ms-5" data-bs-toggle="modal" data-bs-target="#m">Know More</button>
         </div>
             <div className="modal fade" id="m" data-bs-backdrop="static">
                 <div className="modal-dialog">
@@ -328,9 +159,9 @@ export default function Main() {
             <div class="col">
          <div class="card mt-5 h-35 mb-5">
             
-            <img src={ds} alt="" style={{height:"150px"}}class="w-100 rounded" />
-            <h2 class="card-title">Machine Learning</h2>
-            <button class="btn btn-primary class-body w-75 ms-5" data-bs-toggle="modal" data-bs-target="#p">Sepecifications</button>
+            <img src={"https://t4.ftcdn.net/jpg/03/45/39/61/240_F_345396184_SY3kTA5VxjZeIJXrBObFfurRiaRJiT90.jpg"} alt="" style={{height:"150px"}}class="w-100 rounded" />
+            <h2 class="card-title">Floods</h2>
+            <button class="btn btn-primary class-body w-75 ms-5" data-bs-toggle="modal" data-bs-target="#p">Know More</button>
         
             <div class="modal fade" id="p" data-bs-backdrop="static">
                 <div class="modal-dialog">
@@ -365,9 +196,9 @@ export default function Main() {
 
             <div class="col">
          <div class="card  mt-5 mb-5">
-            <img src={arti} alt=""  style={{height:"150px"}}class="w-100 rounded" />
-            <h2 class="card-title">Data Science</h2>
-            <button class="btn btn-primary class-body w-75 ms-5" data-bs-toggle="modal" data-bs-target="#n">Sepecifications</button>
+            <img src={"https://t4.ftcdn.net/jpg/03/45/39/61/240_F_345396184_SY3kTA5VxjZeIJXrBObFfurRiaRJiT90.jpg"} alt=""  style={{height:"150px"}}class="w-100 rounded" />
+            <h2 class="card-title">Coastal Threats</h2>
+            <button class="btn btn-primary class-body w-75 ms-5" data-bs-toggle="modal" data-bs-target="#n">Know More</button>
             <div class="modal fade" id="n" data-bs-backdrop="static">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -397,47 +228,13 @@ export default function Main() {
                 </div>
             </div>
          </div>
+      
          </div>
         </div>
         </div>
-        <div style={{margin:"30px"}}>
-      <div className='text-center text-info'>
-      <h1>OUR TOP COURSES</h1>
-      </div>
-      <Slider autoplay={true}
-       autoplayspeed={1000} 
-       dots={true}
-        initialslide={2}
-        infinite
-        slidesToShow={3}
-        >
-        {
-          multidata.map(item=>(
-            <div>
-          <img src={item}alt='' style={{width:"100%",height:"50vh"}}/>
-           </div>
-          ))
-        }
-      </Slider>
-    </div>
-    <div style={{margin:"30px"}}>
-      <h1 className=''>We collaborate with <a href='#'>100+universities</a></h1>
-      <Slider autoplay={true}
-       autoplayspeed={1000} 
-       dots={true}
-        initialslide={2}
-        infinite
-
-        >
-        {
-          data.map(item=>(
-            <div>
-          <img src={item}alt='' style={{width:"100%",height:"50vh"}}/>
-           </div>
-          ))
-        }
-      </Slider>
-    </div>
+ </div>
+ </div>
+ <Footer></Footer>
  </div>
   )
 }

@@ -46,17 +46,17 @@ function Footer() {
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
          
           <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Course Finder
+            <i class="fas fa-gem me-3"></i>Disaster Management
           </h6>
           <p>
-          Excel your skills by joining with us.
+          To know more about disasters Join US.
           </p>
         </div>
     
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
      
           <h6 class="text-uppercase fw-bold mb-4">
-            Products
+            Disasters
           </h6>
           <p>
             <a href="#!" class="text-reset">Angular</a>
@@ -113,7 +113,7 @@ function Footer() {
 
   <div class="text-center p-4" >
     © 2021 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">CourseFinder.com</a>
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Disasters.com</a>
   </div>
  
 </footer>

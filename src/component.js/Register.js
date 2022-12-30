@@ -4,7 +4,8 @@ import { Form, Button, Container } from "react-bootstrap";
 import { MdLogin } from "react-icons/md";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import FS from "./FS";
+import Footer from "./Footer";
 function Register() {
   const {
     register,
@@ -13,6 +14,8 @@ function Register() {
   } = useForm();
 
   return (
+    <div>
+      <FS></FS>
     <Container>
       <div className="display-2 text-center text-info">Signup</div>
       <Form className="w-50 mx-auto">
@@ -69,11 +72,13 @@ function Register() {
               {/* validation error message for password */}
               {errors.city && <p className="text-danger">* City is required</p>}
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" href="/login">
               Signup <MdLogin />
             </Button>
       </Form>
     </Container>
+    <Footer/>
+    </div>
   );
 }
 

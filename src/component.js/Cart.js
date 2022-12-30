@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-
 function Cart() {
   const getTestData=async()=>{
     //get token from localstorage

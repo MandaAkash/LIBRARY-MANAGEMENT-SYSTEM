@@ -6,7 +6,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { userLogin } from "../slices/userSlice";
 
 import { useNavigate } from "react-router-dom";
-
+import FS from "./FS";
+import Footer from "./Footer";
 function Login() {
   const {
     register,
@@ -46,6 +47,8 @@ function Login() {
   }, [isSuccess, isError]);
 
   return (
+    <div>
+      <FS></FS>
     <div className="container">
       <p className="display-2 text-center text-primary">Login</p>
 
@@ -106,12 +109,14 @@ function Login() {
               )}
             </Form.Group>
 
-            <Button variant="secondary" type="submit">
+            <Button variant="secondary" type="submit" href="/usernav" onClick={()=>navigate("/checkout")}>
               Login
             </Button>
           </Form>
         </div>
       </div>
+    </div>
+    <Footer></Footer>
     </div>
   );
 }

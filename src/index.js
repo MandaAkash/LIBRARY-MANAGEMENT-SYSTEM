@@ -12,11 +12,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {store} from "./store"
 import {Provider} from 'react-redux'
+import { StateProvider } from './StateProvider';
+import reducer, { initialState } from './component.js/reducer';
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
       <Provider store={store}>
-      <App />
+        <StateProvider initialState={initialState} reducer={reducer}>
+         <App />
+      </StateProvider>
       </Provider>
       </BrowserRouter>
     
